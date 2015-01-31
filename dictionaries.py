@@ -1,4 +1,4 @@
-dict = {{'name':'matt'}{'key': 'value' , 'name': 'matt'}}
+dict = {{'name':'matt'}'key': 'value' , 'name': 'matt'}}
 
 print dict
 print dict['key']

@@ -45,11 +45,15 @@ while True:
 
 	ask3 = raw_input("Would you like to edit any entires? ")
 	edit(ask3)
-	end = raw_input("would you like to do more? ")
-	if end.lower() == 'yes' or end.lower() == 'y':
-		return True
-	else: 
-		return False
+	
+
+
+
+	# end = raw_input("would you like to do more? ")
+	# if end.lower() == 'yes' or end.lower() == 'y':
+	# 	return True
+	# else: 
+	# 	return False
 
 
 
