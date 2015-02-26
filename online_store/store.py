@@ -36,7 +36,7 @@ class Menu(object):
     def use_menu(self, select, store):
         try:
             if select == '1':
-                pass
+                self.log_in(store)
             elif select == '2':
                 self.sign_up(store)
         except ValueError:
@@ -49,6 +49,14 @@ class Menu(object):
         store.dict_of_customers[name] = email
 
 
+    def log_in(self, store):
+        name = raw_input("Name: ")
+        email = raw_input("Email: ")
+        for key, values in store.dict_of_customers.iteritems():
+            if key == name and values == email:
+                print("Welcome back to betterbuy.com %s!" % name)
+
+
 better_buy = Store()
 main = Menu()
 select = main.print_menu_main()
@@ -56,4 +64,3 @@ main.use_menu(select, better_buy)
 print(better_buy.dict_of_customers)
 select = main.print_menu_main()
 main.use_menu(select, better_buy)
-print(better_buy.dict_of_customers)
