@@ -1,9 +1,11 @@
 __author__ = 'Matt Borgman'
 
+import database
+
 
 class Store(object):
     def __init__(self):
-        self.dict_of_customers = {}
+        self.list_of_customers = []
         self.available_items = []
 
 
@@ -32,7 +34,7 @@ class Menu(object):
         menu_select = raw_input("Please Log in to shop with us! \n")
         return menu_select
 
-
+    '''main menu'''
     def use_menu(self, select, store):
         try:
             if select == '1':
@@ -42,25 +44,25 @@ class Menu(object):
         except ValueError:
             print("Please enter a number")
 
-
+    '''ask user for name and email and store in list'''
     def sign_up(self, store):
         name = raw_input("What is your name? ")
         email = raw_input("What is your email? ")
-        store.dict_of_customers[name] = email
+        store.list_of_customers.append([name, email])
 
-
+    '''ask user for name and email and compare to database'''
     def log_in(self, store):
         name = raw_input("Name: ")
         email = raw_input("Email: ")
-        for key, values in store.dict_of_customers.iteritems():
-            if key == name and values == email:
-                print("Welcome back to betterbuy.com %s!" % name)
+    '''compare entered log in name to name in database'''
+        # if database.c.execute('SELECT name FROM TABLE WHERE name= ?, name)
 
-
+'''TESTING'''
 better_buy = Store()
 main = Menu()
 select = main.print_menu_main()
 main.use_menu(select, better_buy)
-print(better_buy.dict_of_customers)
+print(better_buy.list_of_customers)
 select = main.print_menu_main()
 main.use_menu(select, better_buy)
+print(better_buy.list_of_customers)
