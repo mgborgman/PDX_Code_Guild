@@ -20,12 +20,15 @@ conn.commit()
 #         user_info = store.better_buy.list_of_customers.pop()
 #         return user_info
 
-user_info = store.better_buy.list_of_customers
+# user_info = store.better_buy.list_of_customers
+user_info = [['matt','mgborgman@gmail.com'],['ashley','ashley@gmail.com']]
 
-print(user_info)
 
 c.executemany('INSERT INTO users VALUES (?,?)', user_info)
 
 c.execute('SELECT * FROM users')
+rows = c.fetchall()
+for row in rows:
+    print(row)
 
 conn.close()
