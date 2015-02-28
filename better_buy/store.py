@@ -46,6 +46,14 @@ class Cart(object):
         self.items.append(item)
 
 
+class Menu(object):
+    def sign_up(self):
+        name = raw_input("Name: ")
+        email = raw_input("Email: ")
+        password = raw_input("Password: ")
+        return [name, email, password]
+
+
 
 
 

@@ -2,13 +2,19 @@ __author__ = 'Matt'
 
 
 import store
+import database
 
 # create store and add customers to list
 better_buy = store.Store()
-name1 = raw_input("what is your name? ")
-customer1 = store.Customer(11, name1)
+menu = store.Menu()
+# name = menu.sign_up()
+# print (name)
+# # name1 = raw_input("what is your name? ")
+# # # customer1 = store.Customer(11, name1)
+# matt = database.Customer(name=name[0], email=name[1], password=name[2])
+# matt.save()
 customer2 = store.Customer(22, 'Ashley')
-better_buy.list_of_customers.append(customer1)
+# better_buy.list_of_customers.append(customer1)
 better_buy.list_of_customers.append(customer2)
 print(better_buy.list_of_customers)
 
@@ -20,5 +26,5 @@ better_buy.available_inventory = [laptop, tv, xbox]
 print(better_buy.available_inventory)
 
 # grab customer1 and add laptop to his cart
-better_buy.buy(customer1, laptop)
-print(customer1.cart)
+# customer1.cart.buy(laptop)
+# customer1.view_cart()
