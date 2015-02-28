@@ -11,9 +11,6 @@ class Store(object):
         self.list_of_customers = []
         self.available_inventory = []
 
-    def buy(self, customer, item):
-        customer.cart = [item]
-
 
 class Customer(object):
     def __init__(self, user_id, name):
@@ -22,10 +19,11 @@ class Customer(object):
         self.cart = Cart()
 
     def __repr__(self):
-        return self.name
+        return "{}".format(self.name)
 
-    def __str__(self):
-        return self.name
+    def view_cart(self):
+        for item in self.cart.items:
+            print("you have a {} in your cart").format(item)
 
 
 class InventoryItem(object):
@@ -35,12 +33,22 @@ class InventoryItem(object):
         self.price = price
 
     def __repr__(self):
-        return"{}, {}, {}".format (self.name, self.item_id, self.price)
+        return "{} {} {}".format(self.item_id, self.name, self.price)
 
+    def __str__(self):
+        return self.name
 
 class Cart(object):
     def __init__(self):
         self.items = []
+
+    def buy(self, item):
+        self.items.append(item)
+
+
+
+
+
 
 
 
