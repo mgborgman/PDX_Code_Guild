@@ -13,10 +13,14 @@ menu = store.Menu()
 # # # customer1 = store.Customer(11, name1)
 # matt = database.Customer(name=name[0], email=name[1], password=name[2])
 # matt.save()
-customer2 = store.Customer(22, 'Ashley')
+
+# for customer in database.Customer:
+#     print customer.name, customer.email
+# customer2 = store.Customer(22, 'Ashley')
 # better_buy.list_of_customers.append(customer1)
-better_buy.list_of_customers.append(customer2)
-print(better_buy.list_of_customers)
+menu.sign_up()
+print menu.customer
+menu.show_customers()
 
 # create list of inventory
 laptop = store.InventoryItem(111, 'Laptop', 699.99)

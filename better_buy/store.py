@@ -1,4 +1,5 @@
 __author__ = 'Matt'
+import database
 
 '''first attempt @ store. No persistence.'''
 
@@ -47,11 +48,18 @@ class Cart(object):
 
 
 class Menu(object):
+    customer = None
     def sign_up(self):
         name = raw_input("Name: ")
         email = raw_input("Email: ")
         password = raw_input("Password: ")
+        self.customer = database.Customer(name=name, email=email, password=password)
+        self.customer.save()
         return [name, email, password]
+
+    def show_customers(self):
+        for name in database.Customer:
+            print name.name, name.email, name.password
 
 
 
