@@ -18,9 +18,10 @@ menu = store.Menu()
 #     print customer.name, customer.email
 # customer2 = store.Customer(22, 'Ashley')
 # better_buy.list_of_customers.append(customer1)
-menu.sign_up()
-print menu.customer
+# menu.sign_up()
+# print menu.customer
 menu.show_customers()
+menu.login()
 
 # create list of inventory
 laptop = store.InventoryItem(111, 'Laptop', 699.99)
